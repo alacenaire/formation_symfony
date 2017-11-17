@@ -20,6 +20,13 @@ class UserServices
 		return $user;
 	}
 
+	public function getUsers()
+	{
+		$repository = $this->em->getRepository(User::class);
+		$users = $repository->findAll();
+		return $users;
+	}
+
 	public function createUser($user)
 	{
 		$this->em->persist($user);
